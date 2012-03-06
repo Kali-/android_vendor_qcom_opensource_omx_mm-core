@@ -350,9 +350,37 @@ enum OMX_QCOM_EXTN_INDEXTYPE
     OMX_QcomIndexParamVideoEncodeMetaBufferMode = 0x7F00001C,
 
     /*"OMX.google.android.index.useAndroidNativeBuffer2"*/
-    OMX_GoogleAndroidIndexUseAndroidNativeBuffer2 = 0x7F00001D
+    OMX_GoogleAndroidIndexUseAndroidNativeBuffer2 = 0x7F00001D,
 
+    /*"OMX.QCOM.index.param.VideoMaxAllowedBitrateCheck"*/
+    OMX_QcomIndexParamVideoMaxAllowedBitrateCheck = 0x7F00001E,
 };
+
+/**
+ * Extension index parameter.  This structure is used to enable
+ * vendor specific extension on input/output port and
+ * to pass the required flags and data, if any.
+ * The format of flags and data being passed is known to
+ * the client and component apriori.
+ *
+ * STRUCT MEMBERS:
+ *  nSize              : Size of Structure plus pData size
+ *  nVersion           : OMX specification version information
+ *  nPortIndex         : Indicates which port to set
+ *  bEnable            : Extension index enable (1) or disable (0)
+ *  nFlags             : Extension index flags, if any
+ *  nDataSize          : Size of the extension index data to follow
+ *  pData              : Extension index data, if present.
+ */
+typedef struct QOMX_EXTNINDEX_PARAMTYPE {
+    OMX_U32 nSize;
+    OMX_VERSIONTYPE nVersion;
+    OMX_U32 nPortIndex;
+    OMX_BOOL bEnable;
+    OMX_U32 nFlags;
+    OMX_U32 nDataSize;
+    OMX_PTR pData;
+} QOMX_EXTNINDEX_PARAMTYPE;
 
 /**
  * Enumeration used to define the video encoder modes
