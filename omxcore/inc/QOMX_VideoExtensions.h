@@ -426,7 +426,8 @@ typedef enum QOMX_VIDEO_EXTRADATATYPE
 {
    QOMX_ExtraDataVideoMultiSliceInfo = 0x7F100000,
    QOMX_ExtraDataVideoNumConcealedMB,
-   QOMX_ExtraDataOMXIndex
+   QOMX_ExtraDataOMXIndex,
+   QOMX_ExtraDataHDCPEncryptionInfo
 } QOMX_VIDEO_EXTRADATATYPE;
 
 
